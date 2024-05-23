@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-main style="background-color: #282b30;">
+    <v-main style="background-color: #1e2124">
       <DialogForm :controller="controller" />
     </v-main>
   </v-app>
@@ -12,3 +12,11 @@ import { newsControllerImpl } from "./news/di/di";
 
 const controller = newsControllerImpl();
 </script>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+</style>
