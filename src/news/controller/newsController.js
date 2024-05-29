@@ -6,7 +6,7 @@ const newsController = (buscaNewsUseCase) => () => {
   const news = ref([]);
   const descricao = ref("");
   const show = ref(news.value.map(() => false));
-  const corBarra = ref("")
+  const corBarra = ref("");
 
   const carregando = ref(false);
 
@@ -42,20 +42,22 @@ const newsController = (buscaNewsUseCase) => () => {
     const mesesRestantes = meses % 12;
 
     if (!mesesRestantes) {
-      return `${anos} ano(s)`
+      return `${anos} ano(s)`;
     }
     return `${anos} ano(s) e ${mesesRestantes} mês(es)`;
-  }
+  };
 
   const corProgresso = (percentual) => {
-    if(percentual <= 50) {
-      return corBarra.value = "red"
+    if (percentual <= 50) {
+      return (corBarra.value = "red");
     } else if (percentual <= 70) {
-      return corBarra.value = "warning"
+      return (corBarra.value = "warning");
     } else {
-      return corBarra.value = "success"
+      return (corBarra.value = "success");
     }
-  }
+
+    //teste do jack
+  };
 
   return {
     modelNews,
@@ -67,7 +69,7 @@ const newsController = (buscaNewsUseCase) => () => {
     descricao,
     converteDuracaoMeses,
     corBarra,
-    corProgresso
+    corProgresso,
   };
 };
 
